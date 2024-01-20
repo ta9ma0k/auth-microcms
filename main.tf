@@ -10,6 +10,13 @@ terraform {
 resource "aws_apigatewayv2_api" "main" {
   name = "MicrocmsProxy"
   protocol_type = "HTTP" 
+  
+  cors_configuration {
+    allow_credentials = true
+    allow_origins = var.cors_allow_origins
+    allow_methods = ["OPTIONS", "GET"]
+    allow_headers = ["Origin", "Authorization", "Accept", "X-Requested-With"]
+  }
 }
 
 resource "aws_apigatewayv2_stage" "main" {

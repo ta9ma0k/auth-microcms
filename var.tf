@@ -7,3 +7,6 @@ variable "azure_tenant_id" {
 variable "azure_app_id" {
   type = string
 }
+variable "cors_allow_origins" {
+  type = list(string)
+}
