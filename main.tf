@@ -30,7 +30,7 @@ resource "aws_apigatewayv2_integration" "main" {
   connection_type = "INTERNET"
   integration_type = "HTTP_PROXY"
   integration_method = "GET"
-  integration_uri = "https://8xsff0n0o4.microcms.io/api/v1/{proxy}"
+  integration_uri = "https://${var.microcms_app_id}.microcms.io/api/v1/{proxy}"
   description = "MicrocmsのブログAPIへプロキシする"
   request_parameters = {
       "append:header.X-MICROCMS-API-KEY" : var.microcms_api_key

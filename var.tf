@@ -1,3 +1,6 @@
+variable "microcms_app_id" {
+  type = string 
+}
 variable "microcms_api_key" {
   type = string 
 }
